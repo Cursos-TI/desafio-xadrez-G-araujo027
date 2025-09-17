@@ -82,8 +82,9 @@ int main() {
     printf("4 - Cavalo\n");
     printf("============================================\n");
     printf("Digite sua escolha: ");
-    scanf("%d", &peca);
+    scanf("%d", &peca); // Lê a escolha do usuário
 
+    // Verificão de qual peça foi escolhida
     switch (peca) {
         case 1: // Torre
             printf("\nVocê escolheu a TORRE.\n");
@@ -93,7 +94,7 @@ int main() {
             printf("\nEscolha a direção (C = Cima | B = Baixo | E = Esquerda | D = Direita): ");
             scanf(" %c", &direcao1);
 
-            moverTorre(casas, direcao1);
+            moverTorre(casas, direcao1); // Chama função recursiva da Torre
             printf("\nMovimento concluído!\n");
             break;
 
@@ -108,7 +109,7 @@ int main() {
             printf("Escolha a direção horizontal (E = Esquerda | D = Direita): ");
             scanf(" %c", &direcao2);
 
-            moverBispo(casas, direcao1, direcao2);
+            moverBispo(casas, direcao1, direcao2);  // Chama função recursiva do Bispo
             printf("\nMovimento concluído!\n");
             break;
 
@@ -121,12 +122,12 @@ int main() {
             printf("Escolha o tipo de movimento (T = Torre | B = Bispo): ");
             scanf(" %c", &direcao1);
 
-            if (direcao1 == 'T' || direcao1 == 't') { 
+            if (direcao1 == 'T' || direcao1 == 't') {   // se o usuario quiser movimentar tipo a Torre
                 printf("\nVocê escolheu movimento em linha reta.\n");
                 printf("Escolha a direção (C = Cima | B = Baixo | E = Esquerda | D = Direita): ");
                 scanf(" %c", &direcao2);
                 moverRainha(casas, 'T', direcao2, ' ');
-            } else { 
+            } else {  // se o usuario quiser movimentar tipo o Bispo
                 char direcaoH;
                 printf("\nVocê escolheu movimento na diagonal.\n");
                 printf("Direção vertical (C = Cima | B = Baixo): ");
@@ -146,7 +147,7 @@ int main() {
             scanf("%d", &vezes);
 
             printf("\nO Cavalo sempre irá se mover em 'L': duas casas para cima e uma para direita.\n");
-            moverCavalo(vezes);
+            moverCavalo(vezes); // Chama função do cavalo
             printf("\nMovimento concluído!\n");
             break;
 
